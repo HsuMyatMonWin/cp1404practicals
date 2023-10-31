@@ -17,10 +17,10 @@ class ProgrammingLanguage:
         """
         Inatialise a ProgrammingLanguage instance.
 
-        name: string, name of the programming language
-        typing: string, whether the language is dynamic typing or static typing
-        reflection: boolean, whether the language supports reflection
-        year: integer, the year the language was released
+        :param name: string, name of the programming language
+        :param typing: string, whether the language is dynamic typing or static typing
+        :param reflection: boolean, whether the language supports reflection
+        :param year: integer, the year the language was released
         """
         self.name = name
         self.typing = typing
