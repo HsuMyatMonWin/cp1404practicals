@@ -3,8 +3,8 @@ guitar module
 
 Estimated Time: 45 mins
 Start Time: 9:02pm
-Finish Time:
-Actual Time:
+Finish Time: 9:55pm
+Actual Time: 53 mins
 """
 
 
