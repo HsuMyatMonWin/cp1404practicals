@@ -38,8 +38,8 @@ class Project:
         :return: str
         """
         return f"{self.name}, start: {self.start_date.strftime('%d/%m/%Y')}, " \
-               f"priority {self.priority}, estimate: {self.cost_estimate}, " \
-               f"completion: {self.completion_percentage}%"
+               f"priority {self.priority}, estimate: ${self.cost_estimate}, " \
+               f"completion: {self.completion_percentage:.0f}%"
 
 
     def __lt__(self, other):
