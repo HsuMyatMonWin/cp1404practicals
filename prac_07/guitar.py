@@ -1,10 +1,6 @@
 """
-guitar module
-
-Estimated Time: 45 mins
-Start Time: 9:02pm
-Finish Time: 9:55pm
-Actual Time: 53 mins
+Modified Guitar module for Practical 7
+Custom Guitar class
 """
 
 
