@@ -7,6 +7,7 @@ Start Time: 2:55pm
 
 
 """
+from project import Project
 
 FILE_NAME = "projects.txt"
 
@@ -29,9 +30,10 @@ def load_projects(file_name):
     """
     with open(file_name, 'r') as in_file:
         projects = []
+        in_file.readline()
         for line in in_file:
             data = line.strip().split("\t")
-            projects.append(data)
+            projects.append(Project(*data))
     return projects
 
 

@@ -37,6 +37,6 @@ class Project:
         """
         return f"Project name: {self.name}, started on {self.start_date}" \
                f", Priority={self.priority}, Cost estimate: {self.cost_estimate}, " \
-               f"{self.completion_percentage} completed."
+               f"{self.completion_percentage}% completed."
 
 
