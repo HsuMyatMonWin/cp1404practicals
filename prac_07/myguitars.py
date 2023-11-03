@@ -23,6 +23,7 @@ def main():
 def load_guitars(file_name):
     """
     Load guitar list from the specified csv file.
+
     :param file_name: string, the name of the csv file that contains the guitar list.
     :return: list
     """
@@ -40,6 +41,7 @@ def load_guitars(file_name):
 def get_new_guitar(guitars):
     """
     Get new guitars from the user and add to the list.
+
     :param guitars: list, a list of Guitar objects.
     """
     name = input("Name: ")
@@ -54,6 +56,7 @@ def get_new_guitar(guitars):
 def save_guitars(file_name, guitars):
     """
     Write the guitar list to the specified csv file.
+
     :param file_name: string, the name of the csv file to save the guitar list.
     :param guitars: list, a list of Guitar objects.
     """

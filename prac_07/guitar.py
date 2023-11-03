@@ -12,6 +12,7 @@ class Guitar:
     def __init__(self, name="", year=0, cost=0):
         """
         Initialise a Guitar instance.
+
         :param name: string, the name of the guitar, default = ""
         :param year: integer, the year the guitar was made, default = 0
         :param cost: float, the price of the guitar, default = 0
@@ -23,6 +24,7 @@ class Guitar:
     def __str__(self):
         """
         Return the name, year and cost of the guitar in a sentence.
+
         :return: str
         """
         return f"{self.name} ({self.year}) : ${self.cost:.2f}"
@@ -30,6 +32,7 @@ class Guitar:
     def __lt__(self, other):
         """
         Compare two Guitar instances by year.
+
         :param other: Guitar object, another guitar to compare with.
         :return: bool
         """
@@ -38,6 +41,7 @@ class Guitar:
     def get_age(self, current_year):
         """
         Return how old the guitar is in years.
+
         :param current_year: integer, the current year
         :return: int
         """
@@ -46,6 +50,7 @@ class Guitar:
     def is_vintage(self, current_year):
         """
         Determine whether the guitar is vintage or not.
+
         :param current_year: integer, the current year
         :return: bool
         """
