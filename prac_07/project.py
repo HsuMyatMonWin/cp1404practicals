@@ -1,13 +1,13 @@
 """
 Project Management Program
-CP1404 Practical 07 Exercise project module file
+CP1404 Practical 07 Exercise program file
 
 Estimated Time: 1hour and 30mins
 Start Time: 2:55pm
-
-
+Break Time: 4:00pm - 4:25pm
+Finish Time: 5:40pm
+Actual Time: 2hours and 20mins
 """
-import datetime
 
 
 class Project:
@@ -41,7 +41,6 @@ class Project:
                f"priority {self.priority}, estimate: ${self.cost_estimate}, " \
                f"completion: {self.completion_percentage:.0f}%"
 
-
     def __lt__(self, other):
         """
         Compare two Project objects by priority.
@@ -50,3 +49,12 @@ class Project:
         :return: bool
         """
         return self.priority < other.priority
+
+    def is_after(self, date):
+        """
+        Determine whether the project is after the specified date.
+
+        :param date: datetime object, the date to determine if the project is started after or not.
+        :return: bool
+        """
+        return self.start_date >= date
