@@ -35,8 +35,15 @@ class Project:
 
         :return: str
         """
-        return f"Project name: {self.name}, started on {self.start_date}" \
-               f", Priority={self.priority}, Cost estimate: {self.cost_estimate}, " \
-               f"{self.completion_percentage}% completed."
+        return f"{self.name}, start: {self.start_date}, " \
+               f"priority {self.priority}, estimate: {self.cost_estimate}, " \
+               f"completion: {self.completion_percentage}%"
 
+    def __lt__(self, other):
+        """
+        Compare two Project objects by priority.
 
+        :param other: Project object, another Project instance to compare to.
+        :return: bool
+        """
+        return self.priority < other.priority

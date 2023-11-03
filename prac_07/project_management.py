@@ -17,13 +17,12 @@ def main():
     doc string here
     """
     projects = load_projects(FILE_NAME)
-    for project in projects:
-        print(project)
+    display_projects(projects)
 
 
 def load_projects(file_name):
     """
-    Read project list from a file and store it in a list.
+    Read project list from a file, store it in a list and return the list.
 
     :param file_name: string, the name of the project list file.
     :return: list
@@ -33,8 +32,34 @@ def load_projects(file_name):
         in_file.readline()
         for line in in_file:
             data = line.strip().split("\t")
-            projects.append(Project(*data))
+            projects.append(Project(data[0], data[1], int(data[2]), float(data[3]), float(data[4])))
     return projects
+
+
+def display_projects(projects):
+    """
+    Display the projects in two groups; incomplete projects; completed projects, both sorted by priority.
+
+    :param projects: list, a list of projects.
+    :return: none
+    """
+    incomplete_projects = []
+    completed_projects = []
+    for project in projects:
+        if project.completion_percentage == 100:
+            completed_projects.append(project)
+        else:
+            incomplete_projects.append(project)
+    incomplete_projects.sort()
+    completed_projects.sort()
+
+    print("Incomplete projects:")
+    for project in incomplete_projects:
+        print(f"  {project}")
+
+    print("Completed projects:")
+    for project in completed_projects:
+        print(f"  {project}")
 
 
 if __name__ == '__main__':
