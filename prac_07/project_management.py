@@ -18,6 +18,7 @@ def main():
     """
     projects = load_projects(FILE_NAME)
     display_projects(projects)
+    filter_project(projects)
 
 
 def load_projects(file_name):
@@ -41,7 +42,7 @@ def display_projects(projects):
     Display the projects in two groups; incomplete projects; completed projects, both sorted by priority.
 
     :param projects: list, a list of projects.
-    :return: none
+    :return: None
     """
     incomplete_projects = []
     completed_projects = []
@@ -60,6 +61,19 @@ def display_projects(projects):
     print("Completed projects:")
     for project in completed_projects:
         print(f"  {project}")
+
+
+def filter_project(projects):
+    """
+    Get a date from the user and display projects started after the specified date.
+
+    :param projects: list, a list of projects.
+    :return: None
+    """
+    date = input("Show projects that start after date (dd/mm/yy): ")
+    for project in projects:
+        if project.start_date > date:
+            print(project)
 
 
 if __name__ == '__main__':
