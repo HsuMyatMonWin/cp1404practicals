@@ -8,6 +8,7 @@ Break Time: 4:00pm - 4:25pm
 
 """
 from project import Project
+import datetime
 
 FILE_NAME = "projects.txt"
 
@@ -19,7 +20,7 @@ def main():
     """
     projects = load_projects(FILE_NAME)
     display_projects(projects)
-    # filter_project(projects)
+    filter_project(projects)
     # update_project(projects)
     # display_projects(projects)
     add_project(projects)
@@ -36,10 +37,11 @@ def load_projects(file_name):
     """
     with open(file_name, 'r') as in_file:
         projects = []
-        in_file.readline()
+        # in_file.readline()
         for line in in_file:
             data = line.strip().split("\t")
-            projects.append(Project(data[0], data[1], int(data[2]), float(data[3]), float(data[4])))
+            date = datetime.datetime.strptime(data[1], "%d/%m/%Y").date()
+            projects.append(Project(data[0], date, int(data[2]), float(data[3]), float(data[4])))
     return projects
 
 
@@ -76,7 +78,8 @@ def filter_project(projects):
     :param projects: list, a list of projects.
     :return: None
     """
-    date = input("Show projects that start after date (dd/mm/yy): ")
+    date_string = input("Show projects that start after date (dd/mm/yy): ")
+    date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
     for project in projects:
         if project.start_date > date:
             print(project)
@@ -112,7 +115,8 @@ def add_project(projects):
     """
     print("Let's add a new project")
     name = input("Name: ")
-    start_date = input("Start date (dd/mm/yy): ")
+    date_string = input("Start date (dd/mm/yy): ")
+    start_date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
     priority = int(input("Priority: "))
     cost_estimate = float(input("Cost estimate: "))
     completion_percentage = float(input("Percent complete: "))
@@ -129,7 +133,7 @@ def save_projects(projects, file_name):
     """
     with open(file_name, 'w', newline='') as out_file:
         for project in projects:
-            print(project.name, project.start_date, project.priority, project.cost_estimate,
+            print(project.name, project.start_date.strftime("%d/%m/%Y"), project.priority, project.cost_estimate,
                   project.completion_percentage, sep="\t", file=out_file)
 
 
