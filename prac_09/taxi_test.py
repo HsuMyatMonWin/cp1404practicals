@@ -14,7 +14,7 @@ def main():
     my_taxi = Taxi("Prius 1", 100)
 
     # Drive the taxi 40 km
-    my_taxi.drive(40)
+    print(f"{my_taxi.name} has driven {my_taxi.drive(40)}km.")
 
     # Print the taxi's details and the current fare
     print(my_taxi)
@@ -22,7 +22,7 @@ def main():
 
     # Restart the meter (start a new fare) and then drive the car 100 km
     my_taxi.start_fare()
-    my_taxi.drive(100)
+    print(f"{my_taxi.name} has driven {my_taxi.drive(100)}km.")
 
     # Print the taxi's details and the current fare
     print(my_taxi)
@@ -30,7 +30,7 @@ def main():
 
     # Test for modifications
     another_taxi = Taxi("Yarris", 200)
-    another_taxi.drive(40)
+    print(f"{another_taxi.name} has driven {another_taxi.drive(40)}km.")
     print(another_taxi)
     print(f"Current fare: ${another_taxi.get_fare()}")
 
