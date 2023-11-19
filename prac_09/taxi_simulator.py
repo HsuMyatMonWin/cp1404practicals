@@ -26,12 +26,15 @@ def main():
             if current_taxi is None:
                 print("You need to choose a taxi before you can drive")
             else:
-                distance = float(input("Drive how far? "))
-                taxis[current_taxi].drive(distance)
-                current_bill = taxis[current_taxi].get_fare()
-                print(f"Your {taxis[current_taxi].name} trip costs you ${current_bill:.2f}")
-                total_bill += current_bill
-                print(f"Bill to date: ${total_bill:.2f}")
+                try:
+                    distance = float(input("Drive how far? "))
+                    taxis[current_taxi].drive(distance)
+                    current_bill = taxis[current_taxi].get_fare()
+                    print(f"Your {taxis[current_taxi].name} trip costs you ${current_bill:.2f}")
+                    total_bill += current_bill
+                    print(f"Bill to date: ${total_bill:.2f}")
+                except ValueError:
+                    print("Invalid input")
         else:
             print("Invalid option")
         print("q)uit, c)hoose taxi, d)rive")
