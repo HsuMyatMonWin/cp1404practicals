@@ -18,5 +18,4 @@ def main():
         print(my_car)
 
 
-if __name__ == "__main__":
-    main()
+main()

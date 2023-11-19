@@ -35,5 +35,4 @@ def main():
     print(f"Current fare: ${another_taxi.get_fare()}")
 
 
-if __name__ == "__main__":
-    main()
+main()
