@@ -2,7 +2,7 @@ import wikipedia
 
 
 def main():
-    """..."""
+    """Ask for a search phrase from the user and display the wikipedia title, url and summary."""
     search_phrase = input("Search phrase: ")
     while search_phrase != "":
         try:
